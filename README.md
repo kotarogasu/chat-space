@@ -23,7 +23,7 @@ Things you may want to cover:
 
 * ...
 
-## messageテーブル
+## messagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
