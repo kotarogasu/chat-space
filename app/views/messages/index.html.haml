@@ -46,13 +46,10 @@
     .form
       .form-box
         .input-box
-          <input placeholder="type a message" class="input-box__text" type="text" name="message[content]" id="message_content">
-          .input-box__image
+          %input.input-box__text{:placeholder => "type a message",:type => "text",:name => "message" }
+          .input-box__image   
             <label class="input-box__image" type="file" for="message_image">
             <i class="fa fa-image"></i> 
             <input class="input-box__image__file" type="file" name="message[image]" id="message_image">
         <input type="submit" name="commit" value="Send" class="submit-btn" data-disable-with="Send">
-
-
-
 
