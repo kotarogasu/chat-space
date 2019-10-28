@@ -1,0 +1,58 @@
+%body
+  .aleart-bar 
+    グループを作成しました
+  .side-menu
+    .side-menu__header
+      %p.side-menu__header__user_name
+        sample name
+      .side-menu__header__box
+        .side-menu__header__btn_new
+          =link_to "https://chat-space-sample.herokuapp.com/groups/new", class: "side-menu__header__btn_new" do
+            = fa_icon 'edit'
+        .side-menu__header__btn_edit
+          =link_to "https://chat-space-sample.herokuapp.com/users/1520/edit", class: "side-menu__header__btn_edit" do
+            = fa_icon 'cog'
+    .side-menu__group
+      .side-menu__group-box
+        .side-menu__group-box__group-name
+          sample group
+        .side-menu__group-box__latest-message
+          最新メッセージ
+    
+  .main-content
+    .main-header
+      .main-header__left-box
+        .main-header__left-box__current-groupe
+          sample groupe name
+        %ul.main-header__left-box__group-menbers
+          Menber:
+          %li.main-header__left-box__group-menber
+            Aさん 
+          %li.main-header__left-box__group-menber
+            Bさん 
+          %li.main-header__left-box__group-menber
+            Cさん
+      .main-header__edit-box
+        Edit
+    .message-view
+      .message-index
+        .message-index__uper-info
+          %p.message-index__uper-info__user-name
+            aaaさん
+          %p.message-index__uper-info__date
+            2019年7月10日%AM6:30
+        %p.message-index__text
+          こんにちは
+    .form
+      .form-box
+        .input-box
+          <input placeholder="type a message" class="input-box__text" type="text" name="message[content]" id="message_content">
+          .input-box__image
+            <label class="input-box__image" type="file" for="message_image">
+            <i class="fa fa-image"></i> 
+            <input class="input-box__image__file" type="file" name="message[image]" id="message_image">
+        <input type="submit" name="commit" value="Send" class="submit-btn" data-disable-with="Send">
+
+
+
+
