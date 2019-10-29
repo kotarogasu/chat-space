@@ -1,48 +1,40 @@
 %body
-  .aleart-bar 
-    グループを作成しました
-  .side-menu
-    .side-menu__header
-      %p.side-menu__header__user_name
-        sample name
-      .side-menu__header__box
-        .side-menu__header__btn_new
-          =link_to "https://chat-space-sample.herokuapp.com/groups/new", class: "side-menu__header__btn_new" do
-            = fa_icon 'edit'
-        .side-menu__header__btn_edit
-          =link_to "https://chat-space-sample.herokuapp.com/users/1520/edit", class: "side-menu__header__btn_edit" do
-            = fa_icon 'cog'
-    .side-menu__group
-      .side-menu__group-box
-        .side-menu__group-box__group-name
-          sample group
-        .side-menu__group-box__latest-message
-          最新メッセージ
+  .side-bar
+    .header
+      %h3.header__name
+        = current_user.name
+      %ul.header__lists
+       %li.list
+          = link_to new_group_path do
+            = fa_icon 'pencil-square-o', class: 'icon'
+        %li.list
+          = link_to edit_user_path(current_user) do
+            = fa_icon 'cog', class: 'icon'
+  .groups
+    - current_user.groups.each do |group|
+      .group
+        = link_to group_messages_path(group) do
+          .group__name
+            = group.name
+          .group__message
+            メッセージはまだありません。
     
-  .main-content
-    .main-header
-      .main-header__left-box
-        .main-header__left-box__current-groupe
-          sample groupe name
-        %ul.main-header__left-box__group-menbers
-          Menber:
-          %li.main-header__left-box__group-menber
-            Aさん 
-          %li.main-header__left-box__group-menber
-            Bさん 
-          %li.main-header__left-box__group-menber
-            Cさん
-      .main-header__edit-box
+  .chat
+    .header
+      .left-header
+        .left-header__title
+        .left-header__menbers
+          .menber
+      .right-header
         Edit
-    .message-view
-      .message-index
-        .message-index__uper-info
-          %p.message-index__uper-info__user-name
-            aaaさん
-          %p.message-index__uper-info__date
-            2019年7月10日%AM6:30
-        %p.message-index__text
-          こんにちは
+  .messages
+    .message
+      .upper-message
+        .upper-message__user-name
+        .upper-message__date
+            
+      .lower-message
+      
     .form
       .form-box
         .input-box
