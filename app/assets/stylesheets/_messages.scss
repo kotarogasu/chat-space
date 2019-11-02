@@ -2,6 +2,7 @@
   box-sizing: border-box;
   color: $white;
   width: 300px;
+  float: left;
   .header {
     background-color: $side_blue_dark;
     height: 100px;
@@ -44,72 +45,79 @@
     }
   }
 }
-.chat {
+
+.main-content {
   width: calc(100% - 300px);
-  .header {
-    box-sizing: border-box;
+  height: 100vh;
+  float: left;
+  background-color: #fafafa;
+  position: relative;
+
+  .main-header {
     height: 100px;
-    padding: 0 40px;
-    .left-header {
-      float: left;
-      &__title {
-        color: #333;
+    border-bottom: solid 1px #eeeeee;
+    display: flex;
+    justify-content: space-between;
+  
+    &__left-box {
+      margin-top:35px;
+      padding-left: 20px;
+      &__current-groupe {
         font-size: 20px;
-        margin-top: 35px;
+        color: #333333;
       }
-      &__members {
-        display: flex;
-        color: $light_gray;
+      &__group-menbers {
         font-size: 12px;
+        height: 18px;
+        color: #999999;
         margin-top: 15px;
-        .member {
-          display: inline-block;
-          padding-right: 5px;
+        list-style: none;
+        list-style-position: outside;
+        display: flex;
+        &__group-menber {
+          display: table-cell;
+          margin-left: 20px;
+          height: 18px; 
+          display: list-item;
         }
       }
     }
-    .right-header {
-      border: 1px solid $light_blue;
-      color: $light_blue;
-      float: right;
-      height: 40px;
-      line-height: 40px;
+    &__edit-box {
       margin-top: 28px;
+      height: 40px;
+      border: 1px solid #38aef0;
+      margin-right: 40px;
+      line-height: 40px;
       padding: 0 20px;
-      &__button {
-        color: $light_blue;
-        text-decoration: none;
-      }
     }
-  }
-
-  .messages {
+  } 
+  .message-view {
     background-color: #FAFAFA;
     box-sizing: border-box;
     padding: 46px 40px 0;
     height: calc(100% - 100px - 90px);
-    .message {
-      .upper-message {
-        display: flex;
-        &__user-name {
-          color: $black;
-          font-size: 16px;
-          font-weight: bold;
+    .message-index{
+      &__uper-info{
+          display: flex;
+          &__user-name{
+            color: $black;
+            font-size: 16px;
+            font-weight: bold;
+          }
+          &__date{
+            color: $light_gray;
+            font-size: 12px;
+            padding-left: 10px;
+          }
         }
-        &__date {
-          color: $light_gray;
-          font-size: 12px;
-          padding-left: 10px;
-        }
-      }
-      .lower-message {
+      .lower-message{
         margin-top: 10px;
         &__content {
           color: $black;
           font-size: 14px;
           margin-bottom: 40px;
-        }
-      }
+        } 
+      } 
     }
   }
 
@@ -117,68 +125,51 @@
     background-color: #ddd;
     display: block;
     height: 90px;
+    width: calc(100% - 80px);
     padding-bottom: 20px;
     padding-left:40px;
     padding-right:40px;
     padding-top:20px;
     position: absolute;
     bottom: 0;
-    display: inline-flex;
-    .form-box {
-      display: flex;
+    display: flex;
+    .input-box {
+      width: calc(110% - 140px);
+      height:50px;
+      display: block;
+      position: relative; 
+      padding-top: auto;
+      top:10px
+    }
+    .input-box__image{
+      background-color: white;
+      color: black;
+      display: block;
+      font-size: 20.8px;
+      cursor: pointer;
+      position: absolute;
+      right: 50px;
+      top: 10px;
+    }
+    .input-box__image__file {
+    display: none;
+    }
+    .submit-btn{
+      background-color: #38aef0;
+      display: inline-block;
+      color: white;
+      cursor: pointer;
+      margin-left: 15px;
       height: 50px;
-      width: 696px;
-      align-items: center;
-      margin: auto;
-      .input-box {
-        width: 581px;
-        display: inline-block;
-        position: relative; 
-        padding-top: auto;
-        .input-box__text {
-          cursor: text;
-          display: inline-block;
-          border-style: none;
-          font-size:16px;
-          font-stretch: 100%;
-          font-weight: 400;
-          height: 50px;
-          width: 520px;
-          padding-left: 10px;
-          padding-right: 40px;
-          text-align: start;
-          text-rendering: auto;
-        } 
-      }
-        .input-box__image{
-          background-color: white;
-          color: black;
-          display: block;
-          font-size: 20.8px;
-          cursor: pointer;
-          position: absolute;
-          right:10px;
-          top: 5px;
-        }
-        .input-box__image__file {
-          display: none;
-        }
-
-      .submit-btn{
-        background-color: #38aef0;
-        display: block;
-        color: white;
-        cursor: pointer;
-        margin-left: 15px;
-        height: 50px;
-        width: 100px;
-        font-size: 16px;
-        align-items: flex-start;
-        text-align: center;
-        font-weight: 400;
-        padding-left: 30px;
-        padding-right: 30px;
-      }
+      width: 100px;
+      font-size: 16px;
+      text-align: center;
+      font-weight: 400;
+      padding-left: 30px;
+      padding-right: 30px;
+      position: absolute;
+      right: -60px;
+      top: 13px;
     }
   }
 }
