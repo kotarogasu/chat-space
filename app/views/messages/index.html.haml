@@ -19,16 +19,15 @@
   .messages
     = render partial: 'message', collection: @messages
 
-  .form
-    .input-box
-      = form_for [@group, @message] do |f|
-        =f.text_field :content, class: 'input-box', placeholder: 'type a message'
-        .input-box__image   
-          = f.label :image, class: 'input-box__image' do
-            = fa_icon 'picture-o', class: 'icon'
-            = f.file_field :image, class: 'input-box__image__file'
-        = f.submit 'Send', class: 'submit-btn'
-        
+  .form-content
+    = form_for [@group, @message] do |f|
+      =f.text_field :content, class: 'input-box', placeholder: 'type a message'
+      .input-box__image   
+        = f.label :image, class: 'input-box__image' do
+          = fa_icon 'picture-o', class: 'icon'
+          = f.file_field :image, class: 'input-box__image__file'
+      = f.submit 'Send', class: 'submit-btn'
+          
     
 
 
