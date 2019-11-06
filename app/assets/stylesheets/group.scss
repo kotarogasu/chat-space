@@ -80,7 +80,7 @@ li {
   }
 }
 
-.chat-group-user {
+.chat-group-user  {
   padding: 0 15px;
   line-height: 50px;
   font-size: 14px;
@@ -94,14 +94,16 @@ li {
     float: left;
   }
   &__btn {
-    float: right;
+    
     display: inline-block;
     cursor: pointer;
     &--add {
       color: #38aef0;
+      float: right;
     }
     &--remove {
       color: #f05050;
+      float: right;
     }
   }
 }
