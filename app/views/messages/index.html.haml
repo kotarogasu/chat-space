@@ -14,7 +14,7 @@
           = user.name
         
     .main-header__edit-box
-      = link_to "Edit", "edit" 
+      = link_to "Edit","edit" ,class: "main-header__edit-box__text"
       
   .messages
     = render partial: 'message', collection: @messages
