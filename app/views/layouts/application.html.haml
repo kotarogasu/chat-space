@@ -9,3 +9,11 @@
   %body
     = render 'layouts/notifications'
     = yield
+
+   .form-group
+          = f.label :タグ
+          = f.text_field :tag_list, value: @product.tag_list.join(','), "data-role" => "tagsinput", class: "form-control "
+    
+        .form-group
+          = f.label :タグ
+          = f.text_field :tag_list, value: @product.tag_list.join(','), "data-role" => "ta
